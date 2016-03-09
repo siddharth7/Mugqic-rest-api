@@ -13,17 +13,17 @@ Gsoc 2016 selection test
 
 #Api Endpoints
 ##GET
-- ##curl -X GET http://localhost:5000/users <br />
+- `curl -X GET http://localhost:5000/users` <br />
   return all users in the database with there phone numbers <br />
   example : [{"name": "siddharth", "phone": "9810180107"}, {"name": "rohan", "phone": "9811223342"}, {"name": "ayush", "phone": "9812546732"}]
 
-- ##curl -X GET http://localhost:5000/users/'username' <br />
+- `curl -X GET http://localhost:5000/users/'username'` <br />
   return phone number and name corresponding to the name in the request <br />
   example(if name is found) : {"name": "siddharth", "phone": "9810180107", "success": "true"} <br />
           (if name is not found): {"error": "User not found", "success": "false"} <br />
 
 ##POST
-- curl -X POST -H "Content-Type: application/json" -d '{"name”:"Am", "phone”:"981233"}' http://localhost:5000/users/add
+- `curl -X POST -H "Content-Type: application/json" -d '{"name”:"Am", "phone”:"981233"}' http://localhost:5000/users/add`
   <br/> Adds to database if not in it, else sends failure message <br />
   Responses recieved <br />
   - {"error": "Already in Db", "success": “false"} <br />
@@ -32,7 +32,7 @@ Gsoc 2016 selection test
   - {"name": "Am", "phone": "9812321232", "success": "true"} <br />
 
 ##PUT
-- curl -X PUT -H "Content-Type: application/json" -d '{"name”:"Am", "phone”:"981233"}' http://localhost:5000/users/add
+- `curl -X PUT -H "Content-Type: application/json" -d '{"name”:"Am", "phone”:"981233"}' http://localhost:5000/users/add`
   <br/> Adds to database if not in it, else sends failure message <br />
   Responses recieved <br />
   - {"error": "Already in Db", "success": “false"} <br />
