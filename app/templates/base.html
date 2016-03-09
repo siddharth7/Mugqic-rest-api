@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module('getdata', []);
+app.controller('showdata', function($scope, $http) {
+  $http.get("http://localhost:5000/users").then(function (response) {  
+      $scope.myData = response.data;
+  });
+});
+</script>
+<title>REST Data</title>
+<body>
+
+<div ng-app="getdata" ng-controller="showdata">
+<h1 align="center">REST Data<h1>
+<table align="center">
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+  </tr>
+  <tr ng-repeat="x in myData"> 
+    <td align="center">{{x.name|angular}}</td>
+    <td align="center">{{x.phone|angular}}</td>
+  </tr>
+</table>
+
+
+</div>
+  </body>
+</html>
